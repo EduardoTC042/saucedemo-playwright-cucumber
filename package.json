@@ -1,0 +1,36 @@
+{
+  "name": "saucedemo-playwright-cucumber",
+  "version": "1.0.0",
+  "description": "Suite de pruebas E2E para Sauce Demo con Playwright + Cucumber (BDD) y Page Object Model",
+  "private": true,
+  "scripts": {
+    "pretest": "rimraf reports",
+    "test": "cucumber-js",
+    "test:smoke": "cucumber-js --tags @smoke",
+    "test:login": "cucumber-js --tags @login",
+    "test:cart": "cucumber-js --tags @cart",
+    "test:checkout": "cucumber-js --tags @checkout",
+    "test:headed": "cross-env HEADLESS=false cucumber-js",
+    "test:dry": "cucumber-js --dry-run",
+    "typecheck": "tsc --noEmit",
+    "install:browsers": "playwright install --with-deps chromium"
+  },
+  "keywords": [
+    "playwright",
+    "cucumber",
+    "bdd",
+    "page-object-model",
+    "qa",
+    "saucedemo"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.3.0",
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^22.10.0",
+    "cross-env": "^7.0.3",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.0"
+  }
+}
